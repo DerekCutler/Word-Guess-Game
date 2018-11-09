@@ -1,40 +1,65 @@
-let scotches = ["Ardbeg", "Bowmore", "Cragganmore", "Dalwhinnie", "Edradour", "Finlaggan", "Glenlivet", "Hillside", "Inchmoan", "Jura", "Kininvie", "Lagavulin", "Macduff", "Oban", "Pittyvaich", "Rosebank", "Smokehead", "Talisker", "Various", "Wolfburn"];
-let scotch = scotches[Math.floor(Math.random() * scotches.length)];
-let g = 10;
-let keyPressed
-let guessTheScotch = [];
-for (let x = 0; x < scotch.length; x++) {
+// Scotch Array
+var scotches = ["ARDBEG","BOWMORE","CRAGGANMORE","DALWHINNIE","EDRADOUR",
+"FINLAGGAN","GLENLIVET","HILLSIDE","INCHMOAN","JURA",
+"KININVIE","LAGAVULIN","MACDUFF","OBAN","PITTYVAICH",
+"ROSEBANK","SMOKEHEAD","TALISKER","VARIOUS","WOLFBURN"];
+
+// pull scotch from the array
+var scotch = scotches[Math.floor(Math.random() * scotches.length)];
+
+// console.log("SCOTCH: " +scotch)
+
+// Initial guesses
+var guesses = 10;
+
+// console.log("GUESSES: "  +guesses)
+
+// Initial definition
+var keyPressed
+
+// Show Spaces for Scotch Length
+var guessTheScotch = [];
+for (var x = 0; x < scotch.length; x++) {
     guessTheScotch.push(" _ ");
 }
+// Show in HTML under: <div id="guessTheScotch"></div>
+document.getElementById("guessTheScotch").innerHTML = guessTheScotch;
 
-document.getElementById("guessTheScotch").innerHTML = guessTheScotch.join("");
-
+//Added event listener CHECKBACK
 document.addEventListener("keypress", function (pressed) {
     keyPressed = pressed.key.toUpperCase();
 
-    for (var i = 0; i < scotch.length; i++) {
-        if (scotch.charAt[i] === keyPressed) {
-            if (i !== -1) {
-                guessTheScotch[i] = keyPressed;
-                document.getElementById("guessTheScotch").innerHTML = guessTheScotch.join(" ");
-            }
-            else {g--}
-        }
-
-    }
+    Console.log(pressed.key)
 
 
 
-    console.log(keyPressed);
+
+
+    
+// // Attempt at locating key pressed in the hidden word
+    // for (var i = 0; i < scotch.length; i++) {
+    //     if (scotch.charAt[i] === keyPressed) {
+    //         if (i !== -1) {
+    //             guessTheScotch[i] = keyPressed;
+    //             document.getElementById("guessTheScotch").innerHTML = guessTheScotch;
+    //         }
+    //         else {guesses--}
+    //     }
+
+    // }
+
+
+
+ 
 });
 //here****
 
-console.log(guessTheScotch);
+// console.log(guessTheScotch);
 
-console.log(scotch);
+// console.log(scotch);
 
 
-console.log(keyPressed)
+// console.log(keyPressed)
 
 // function: resetGame(){
 //     alert("You have 10 guesses to guess the Scotch\nGood luck!!")
