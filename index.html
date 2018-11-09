@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="assets/css/style.css" rel="stylesheet">
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    
 
     <title>I Love Scotch</title>
 
@@ -25,117 +25,17 @@
     <div><br></div>
 
     <div class="cont3-1">
-        <h2>Stuff from Game.JS</h2>
         <div>
-            <script type="text/javascript">
 
-                //  setting up start of game 
-
-                resetGame(){
-                    alert("You have 10 guesses to guess the Scotch\nGood luck!!")
-                    randomScotch();
-                    calculateNumberOfLetters();
-                }
-
-
-                // guesses loop key listener
-                document.onkeyup() {
-                    for (g = 1; g <= 10; i++) {
-                        if (g < 11) {
-                            alert("You have " + (10 -= g) + " guesses left.")
-                        }
-                        else {
-                            alert("Maybe you've had a little too much Scotch already...\nDo you want to try again?");
-                            resetGame();
-                        }
-                    }
+            <div id="guessTheScotch"></div>
 
 
 
 
 
-                    // Array of Scotches (20 varieties)
-                    var scotches = ["Ardbeg", "Bowmore", "Cragganmore", "Dalwhinnie", "Edradour", "Finlaggan", "Glenlivet", "Hillside", "Inchmoan", "Jura", "Kininvie", "Lagavulin", "Macduff", "Oban", "Pittyvaich", "Rosebank", "Smokehead", "Talisker", "Various", "Wolfburn"],
 
 
 
-                        // random select a Scotch from Array 
-                        randomScotch(i) {
-                            Math.floor(Math.random() * scotches.length) = [i];
-                            scotches[i] = scotch;
-                            return scotch;
-                            // console.log(scotch)
-                        }
-
-                    // create an array of letter in the word or other way to seperate the characters
-
-
-                    // Display Letters Hidden but with underscore 
-
-
-
-
-
-                    // If all letters guessed than show
-
-                    // If all letters guessed that alert("YOU WIN! \nEnjoy yourself a nice glass of Scotch!")
-
-
-                    // You Win Else You Lose
-
-                    //  reset the game 
-
-                    //  setting up start of game 
-
-                    resetGame(){
-                        alert("You have 10 guesses to guess the Scotch\nGood luck!!")
-                        randomScotch();
-                        calculateNumberOfLetters();
-                    }
-
-
-                    // guesses loop key listener
-
-                    for (g = 1; g <= 10; i++) {
-                        // key listener that counts and adds to guesses g
-                        if (g === 10);
-                        alert("Maybe you've had a little too much Scotch already");
-                        resetGame();
-                    }
-
-                    // Array of Scotches (20 varieties)
-                    var scotches = ["Ardbeg", "Bowmore", "Cragganmore", "Dalwhinnie", "Edradour", "Finlaggan", "Glenlivet", "Hillside", "Inchmoan", "Jura", "Kininvie", "Lagavulin", "Macduff", "Oban", "Pittyvaich", "Rosebank", "Smokehead", "Talisker", "Various", "Wolfburn"],
-
-
-
-                        // random select a Scotch from Array 
-                        randomScotch(i) {
-                            Math.floor(Math.random() * scotches.length) = [i];
-                            scotches[i] = scotch;
-                            return scotch;
-                            // console.log(scotch)
-                        }
-
-                // create an array of letter in the word or other way to seperate the characters
-
-
-                // Display Letters Hidden but with underscore 
-
-
-
-
-
-                // If all letters guessed than show
-
-                // If all letters guessed that alert("YOU WIN! \nEnjoy yourself a nice glass of Scotch!")
-
-
-                // You Win Else You Lose
-
-                //  reset the game 
-
-
-            </script>
         </div>
     </div>
     <div><br></div>
@@ -147,5 +47,6 @@
 
 
 </body>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </html>
