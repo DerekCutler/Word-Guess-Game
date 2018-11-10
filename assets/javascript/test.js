@@ -19,12 +19,7 @@
  
 // console.log(guessCount)
 
-//  WAS:
-// document.addEventListener("keypress", function (pressed) {
-//     keyPressed = pressed.key.toUpperCase();
 
-// });
-// Console.log(pressed.key)
 
 
 // UNTESTED reset game

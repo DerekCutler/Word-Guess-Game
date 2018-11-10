@@ -1,42 +1,67 @@
 // Scotch Array
-var scotches = ["ARDBEG", "BOWMORE", "CRAGGANMORE", "DALWHINNIE", "EDRADOUR",
+let scotches = ["ARDBEG", "BOWMORE", "CRAGGANMORE", "DALWHINNIE", "EDRADOUR",
     "FINLAGGAN", "GLENLIVET", "HILLSIDE", "INCHMOAN", "JURA",
     "KININVIE", "LAGAVULIN", "MACDUFF", "OBAN", "PITTYVAICH",
     "ROSEBANK", "SMOKEHEAD", "TALISKER", "VARIOUS", "WOLFBURN"];
 
 // pull scotch from the array
-var scotch = scotches[Math.floor(Math.random() * scotches.length)];
+let scotch = scotches[Math.floor(Math.random() * scotches.length)];
 
-console.log("SCOTCH: " +scotch)
+// console.log("SCOTCH: " + scotch)
 
 // Initial definition
-var guessesAllowed = 10;
+let guessesAllowed = 15;
 
-console.log("guessesAllowed: " +guessesAllowed)
+// console.log("guessesAllowed: " + guessesAllowed)
 
 // Inital guessCount
-var guessCount = [];
-console.log("guessCount: " +guessCount)
+let guessCount = 0;
 
 // console.log("GUESSES: "  +guesses)
 
-// Initial definition NOT SURE IF NEEDED
-var keyPressed; 
+// Initial definition 
+let key;
 
 // Show Spaces for Scotch Length
-var guessTheScotch = [];
-for (var x = 0; x < scotch.length; x++) {
-    guessTheScotch.push(" _ ");
+let guessTheScotch = [];
+
+// display _ for letter count
+for (let x = 0; x < scotch.length; x++) {
+    guessTheScotch.push("_");
 }
 
 // Show in HTML under: <div id="guessTheScotch"></div>
 document.getElementById("guessTheScotch").innerHTML = guessTheScotch;
+// 
+
+// event listener for CAP output & ++guess
+document.addEventListener("keyup", function (event) {
+    key = event.key.toUpperCase();
+    guessCount++
+    // Scotch Loop
+    for (let i = 0; i < scotch.length; i++) {
+        // console.log("scotch[i]: " + scotch[i]);
+
+        if (scotch[i] === key) {
+            guessTheScotch[i] = key;
+
+            document.getElementById("guessTheScotch").innerHTML = guessTheScotch;
+        }
+    }
+
+    // check if game is over.
+    if (guessTheScotch.indexOf("_") == -1) {
+        alert("Congratulations!\nYou won yourself a glass of " + scotch + "!")
+    }
+    else if (guessCount === guessesAllowed) {
+        alert("Looks like you may have had one too many glasses of " + scotch + " already!\nYou lose!!")
+    }
+    // console.log("guessCount: " + guessCount)
+    // console.log(key)
+});
 
 
-// WORKS UPTO THIS?
-
-
-
+// WORKS UPTO THIS
 
 //** */FIN**
 
